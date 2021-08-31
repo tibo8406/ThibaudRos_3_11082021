@@ -1,0 +1,23 @@
+{
+    "dependencies": {
+        "sass": "^1.38.2"
+    },
+    "name": "projet-3---ohmyfood",
+    "description": "Compétences évaluées :",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "sass": "sass --watch ./sass/main.scss:./public/style/style.css --style compressed"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tibo8406/ThibaudRos_3_11082021.git"
+    },
+    "author": "Thibaud Ros",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/tibo8406/ThibaudRos_3_11082021/issues"
+    },
+    "homepage": "https://github.com/tibo8406/ThibaudRos_3_11082021#readme"
+}
