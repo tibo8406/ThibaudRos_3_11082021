@@ -126,14 +126,6 @@
         border-radius: 0 0.75rem 0.75rem 0;
         color: white;
         font-size: 1.5rem;
-        &appear{
-            animation: slideIn 0.2s;
-            animation-timing-function: ease-in-out;
-            animation-fill-mode: both;
-        }
-        @keyframes slideIn {
-
-        }
     }
     &appear{
         animation: fadein 0.5s;
