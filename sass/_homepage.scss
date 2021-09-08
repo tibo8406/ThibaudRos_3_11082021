@@ -3,6 +3,10 @@ html {
         margin: 0;
         font-family: 'Roboto', sans-serif;
 }
+a{
+    text-decoration:none; 
+    color: unset;
+}
     
 h1 {
         margin: 0;
@@ -32,7 +36,7 @@ h1 {
         top: 0;
         z-index: 15;
         animation: loading 2.5s;
-        background-color: hsla(0,0%,100%, 90%);
+        background-color: hsla(0,0%,50%, 70%);
         animation-fill-mode: both;
         animation-delay: 0.5s;
         @keyframes loading{
@@ -105,10 +109,10 @@ h1 {
             color: white;
             cursor: pointer;
             background-color: $color-background;
-            background-image: linear-gradient(45deg, $color-primary, $color-secondary);
+            background-image: linear-gradient(135deg, $color-primary, $color-secondary);
             box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
             &:hover{
-                background-image: linear-gradient(45deg, rgba(147, 86, 220, .7), rgba(255, 121, 218, .7));
+                background-image: linear-gradient(135deg, rgba(147, 86, 220, .7), rgba(255, 121, 218, .7));
                 box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 45%);
                 transition: transform ease-in-out;
             }
@@ -126,6 +130,7 @@ h1 {
             padding: 1.5rem;
             margin: 0rem 0rem 1rem 0.75rem;
             font-weight: bolder;
+            align-items: center;
             &:hover {
                 background-color: lighten($color-primary, 36%);
                 cursor: pointer;
