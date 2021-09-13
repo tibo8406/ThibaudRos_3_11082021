@@ -1,216 +1,305 @@
-    body,
-    html {
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
+body,
+html {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+h1 {
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 2px -2px #cecece;
+    font-family: 'Shrikhand';
+}
+
+.container {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 15;
+    animation: loading 2.5s;
+    background-color: hsla(0, 0%, 50%, 70%);
+    animation-fill-mode: both;
+    animation-delay: 0.5s;
+    @keyframes loading {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            z-index: -1;
+        }
     }
-    
-    h1 {
-        margin: 0;
-    }
-    
-    header {
-        text-align: center;
-        padding: 1rem;
-        box-shadow: 0 4px 2px -2px #cecece;
-        font-family: 'Shrikhand';
-    }
-    
-    .container {
-        max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .localisation {
+    &__container {
         display: flex;
-        justify-content: center;
-        background-color: #eaeaea;
-        background: linear-gradient(to bottom, #cfcfcf, #eaeaea 10%);
-        font-size: 1.2rem;
-        padding: 1rem 1rem;
-        &__icon {
-            margin-right: 1rem;
-        }
-        &__text {
-            font-weight: 700;
-        }
+        width: 7rem;
+        justify-content: space-between;
+        animation: moving 0.5s backwards infinite ease-in-out alternate;
+        animation-play-state: running;
     }
-    
-    .explor {
-        padding: 2rem;
-        background-color: $color-background;
-        text-align: center;
-        &__btn {
-            border: 0;
-            padding: 1rem 1rem;
-            font-weight: 500;
-            font-size: 1.1rem;
-            border-radius: 100px;
-            color: white;
-            cursor: pointer;
-            background-color: $color-background;
-            background-image: linear-gradient(0deg, rgba(147, 86, 220, .9), rgba(255, 121, 218, .9));
-            box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
-        }
-    }
-    
-    .process {
-        padding: 3rem 1rem 3rem 1rem;
-        &__steps {
-            display: flex;
-            position: relative;
-            box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
-            border-radius: 1rem;
-            background-color: $color-background;
-            padding: 1.5rem;
-            margin: 0rem 0rem 1rem 0.75rem;
-            font-weight: bolder;
-            &:hover {
-                background-color: lighten($color-primary, 36%);
-                cursor: pointer;
-                .process__icon {
-                    color: $color-primary;
-                }
-            }
-        }
-        &__list {
-            padding: 0;
-            margin: 0;
-        }
-        @media (min-width: 768px) {
-            .process__list {
-                display: flex;
-                justify-content: center;
-            }
-            .process__steps {
-                margin-left: 1.5rem;
-            }
-        }
-        &__icon {
-            color: #7e7e7e;
-            margin-right: 1rem;
-        }
-        &__title {
-            margin-bottom: 1.5rem;
-        }
-        &__number {
-            line-height: 25px;
+    &__bar {
+        &--1 {
+            height: 4rem;
+            width: 1rem;
             background-color: $color-primary;
-            color: white;
-            border-radius: 50%;
-            height: 25px;
-            width: 25px;
-            margin-right: 20px;
-            margin-left: -35px;
-            text-align: center;
+        }
+        &--2 {
+            height: 4rem;
+            width: 1rem;
+            background-color: $color-secondary;
+        }
+        &--3 {
+            height: 4rem;
+            width: 1rem;
+            background-color: $color-tertiary;
+        }
+        @keyframes moving {
+            0% {
+                transform: scaleY(0.5);
+            }
+            100% {
+                transform: scaleY(1.0);
+            }
         }
     }
-    
-    .restaurants {
-        padding: 3rem 1rem 3rem 1rem;
+}
+
+.localisation {
+    display: flex;
+    justify-content: center;
+    background-color: #eaeaea;
+    background: linear-gradient(to bottom, #cfcfcf, #eaeaea 10%);
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+    &__icon {
+        margin-right: 1rem;
+    }
+    &__text {
+        font-weight: 700;
+    }
+}
+
+.explor {
+    padding: 2rem;
+    background-color: $color-background;
+    text-align: center;
+    &__btn {
+        border: 0;
+        padding: 1rem 1rem;
+        font-weight: 500;
+        font-size: 1.1rem;
+        border-radius: 100px;
+        color: white;
+        cursor: pointer;
         background-color: $color-background;
-        &__title {
-            margin-bottom: 1.5rem;
-        }
-        &__list {
-            display: grid;
-            column-gap: 1.5rem;
-            row-gap: 1.5rem;
-        }
-        @media (min-width: 768px) and (max-width: 1199px) {
-            .restaurants__list {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                column-gap: 3rem;
-            }
-        }
-        @media (min-width: 1200px) {
-            .restaurants__list {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                column-gap: 3rem;
-            }
+        background-image: linear-gradient(135deg, $color-primary, $color-secondary);
+        box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
+        &:hover {
+            background-image: linear-gradient(135deg, rgba(147, 86, 220, .7), rgba(255, 121, 218, .7));
+            box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 45%);
+            transition: transform ease-in-out;
         }
     }
-    
-    .carte {
-        border-radius: 1rem;
-        box-shadow: 4px 4px 6px #aaa;
+}
+
+.process {
+    padding: 3rem 1rem 3rem 1rem;
+    &__steps {
+        display: flex;
         position: relative;
-        background: white;
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        &__img {
-            object-fit: cover;
-            width: 100%;
-            height: 10.875rem;
-            box-shadow: none;
-            border-radius: 1rem 1rem 0 0;
-        }
-        &__badge {
-            background-color: #99e2d0;
-            color: #008766;
-            padding: .5rem;
-            border-radius: .125rem;
-            position: absolute;
-            top: 1rem;
-            right: .75rem;
-            font-weight: bold;
-            font-size: small;
-        }
-        &__footer {
-            display: flex;
-            padding: 0.875rem;
-        }
-        &__title {
-            margin: 0 0 0.2rem 0;
-            font-size: large;
-            font-weight: bold;
-        }
-        &__subtitle {
-            font-size: medium;
-        }
-        &__fav {
-            display: flex;
-            position: absolute;
-            align-items: center;
-            justify-content: center;
-            right: 1.5rem;
-            &--size {
-                font-size: 1.3rem;
-            }
-            &:hover {
+        box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+        border-radius: 1rem;
+        background-color: $color-background;
+        padding: 1.5rem;
+        margin: 0rem 0rem 1rem 0.75rem;
+        font-weight: bolder;
+        align-items: center;
+        &:hover {
+            background-color: lighten($color-primary, 36%);
+            cursor: pointer;
+            .process__icon {
                 color: $color-primary;
             }
         }
     }
-    
-    .footer {
-        background-color: #353535;
-        padding: 1rem;
-        text-decoration: none;
-        &__logo {
-            height: 18px;
-            width: 98px;
+    &__list {
+        padding: 0;
+        margin: 0;
+    }
+    @media (min-width: 768px) {
+        .process__list {
+            display: flex;
+            justify-content: center;
         }
-        &__logo--size {
-            margin: 0;
-            font-size: 1.2rem;
-            font-family: 'Shrikhand';
-            color: white;
-            font-weight: lighter;
-        }
-        &__link,
-        a {
-            margin-top: 1.5rem;
-            color: white;
-            position: relative;
-            text-decoration: none;
-        }
-        &__icon--size {
-            width: 0.75rem;
-            height: 0.75rem;
-            padding-right: 0.75rem;
+        .process__steps {
+            margin-left: 1.5rem;
         }
     }
+    &__icon {
+        color: #7e7e7e;
+        margin-right: 1rem;
+    }
+    &__title {
+        margin-bottom: 1.5rem;
+    }
+    &__number {
+        line-height: 25px;
+        background-color: $color-primary;
+        color: white;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        margin-right: 20px;
+        margin-left: -35px;
+        text-align: center;
+    }
+}
+
+.restaurants {
+    padding: 3rem 1rem 3rem 1rem;
+    background-color: $color-background;
+    &__title {
+        margin-bottom: 1.5rem;
+    }
+    &__list {
+        display: grid;
+        column-gap: 1.5rem;
+        row-gap: 1.5rem;
+    }
+    @media (min-width: 768px) and (max-width: 1199px) {
+        .restaurants__list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 3rem;
+        }
+    }
+    @media (min-width: 1200px) {
+        .restaurants__list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 3rem;
+        }
+    }
+}
+
+.carte {
+    border-radius: 1rem;
+    box-shadow: 4px 4px 6px #aaa;
+    position: relative;
+    background: white;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    &__img {
+        object-fit: cover;
+        width: 100%;
+        height: 10.875rem;
+        box-shadow: none;
+        border-radius: 1rem 1rem 0 0;
+    }
+    &__badge {
+        background-color: #99e2d0;
+        color: #008766;
+        padding: .5rem;
+        border-radius: .125rem;
+        position: absolute;
+        top: 1rem;
+        right: .75rem;
+        font-weight: bold;
+        font-size: small;
+    }
+    &__footer {
+        display: flex;
+        padding: 0.875rem;
+    }
+    &__title {
+        margin: 0 0 0.2rem 0;
+        font-size: large;
+        font-weight: bold;
+    }
+    &__subtitle {
+        font-size: medium;
+    }
+    &__fav {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        right: 1.5rem;
+        font-size: 1.3rem;
+        &--full {
+            opacity: 0;
+            position: absolute;
+            display: flex;
+            background: -webkit-linear-gradient($color-primary, $color-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &--empty {
+            position: relative;
+            display: flex;
+        }
+        @keyframes disappear {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        &:hover {
+            .carte__fav--full {
+                animation: disappear 1s;
+                animation-fill-mode: both;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: #353535;
+    padding: 1rem;
+    text-decoration: none;
+    &__logo {
+        height: 18px;
+        width: 98px;
+    }
+    &__logo--size {
+        margin: 0;
+        font-size: 1.2rem;
+        font-family: 'Shrikhand';
+        color: white;
+        font-weight: lighter;
+    }
+    &__link,
+    a {
+        margin-top: 1.5rem;
+        color: white;
+        position: relative;
+        text-decoration: none;
+    }
+    &__icon--size {
+        width: 0.75rem;
+        height: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}

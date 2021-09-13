@@ -1,12 +1,11 @@
 {
     "dependencies": {
-        "sass": "^1.37.5"
+        "sass": "^1.38.2"
     },
     "name": "projet-3---ohmyfood",
     "description": "Compétences évaluées :",
     "version": "1.0.0",
     "main": "index.js",
-    "devDependencies": {},
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "sass": "sass --watch ./sass/main.scss:./public/style/style.css --style compressed"

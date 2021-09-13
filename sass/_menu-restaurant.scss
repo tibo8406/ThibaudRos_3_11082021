@@ -39,6 +39,41 @@
             column-gap: 3rem;
         }
     }
+    &__fav {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        right: 1.5rem;
+        font-size: 1.3rem;
+        &--full {
+            opacity: 0;
+            position: absolute;
+            display: flex;
+            background: -webkit-linear-gradient($color-primary, $color-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &--empty {
+            position: relative;
+            display: flex;
+        }
+        @keyframes disappear {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        &:hover {
+            cursor: pointer;
+            .menu__fav--full {
+                animation: disappear 1s;
+                animation-fill-mode: both;
+            }
+        }
+    }
     &__h2--margin {
         margin-bottom: 0;
     }
@@ -57,8 +92,13 @@
         color: white;
         cursor: pointer;
         background-color: $color-background;
-        background-image: linear-gradient(0deg, rgba(147, 86, 220, .9), rgba(255, 121, 218, .9));
+        background-image: linear-gradient(135deg, $color-primary, $color-secondary);
         box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
+        &:hover {
+            background-image: linear-gradient(135deg, rgba(147, 86, 220, .7), rgba(255, 121, 218, .7));
+            box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 45%);
+            transition: transform ease-in-out;
+        }
     }
 }
 
@@ -84,6 +124,7 @@
         }
     }
     &__item {
+        opacity: 0;
         padding: 1rem;
         display: flex;
         border-radius: 0.75rem;
@@ -92,22 +133,134 @@
         max-width: 100%;
         background-color: white;
         justify-content: space-between;
+        &:hover {
+            cursor: pointer;
+            .item__selection {
+                animation: translatein 0.5s;
+                animation-fill-mode: both;
+            }
+            .itemappear {
+                overflow: visible;
+            }
+            .item__price {
+                animation-timing-function: ease-in-out;
+                animation: translatein 0.5s;
+                animation-fill-mode: both;
+            }
+            .fa-check-circle {
+                animation: rotation_check 0.5s;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: backwards;
+            }
+        }
     }
 }
 
 .item {
+    width: 70%;
     &__title {
         margin: 0;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        white-space: nowrap;
     }
     &__description {
         margin: 0.25rem 0 0 0;
         font-family: 'Roboto-light';
         font-weight: bolder;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis
     }
     &__price {
         display: flex;
         align-items: flex-end;
         font-weight: bolder;
+        transform: translateX(150%);
+        padding-right: 1rem;
+    }
+    &__selection {
+        background-color: $color-tertiary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        margin: -1rem -1.1rem -1rem -1rem;
+        border-radius: 0 0.75rem 0.75rem 0;
+        color: white;
+        font-size: 1.5rem;
+        transform: translateX(100%);
+    }
+    &appear {
+        animation: fadein 0.5s;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+        overflow: hidden;
+    }
+}
+
+.delay1 {
+    animation-delay: 0.1s;
+}
+
+.delay2 {
+    animation-delay: 0.2s;
+}
+
+.delay3 {
+    animation-delay: 0.3s;
+}
+
+.delay4 {
+    animation-delay: 0.4s;
+}
+
+.delay5 {
+    animation-delay: 0.5s;
+}
+
+.delay6 {
+    animation-delay: 0.6s;
+}
+
+.delay7 {
+    animation-delay: 0.7s;
+}
+
+.delay8 {
+    animation-delay: 0.8s;
+}
+
+.delay9 {
+    animation-delay: 0.9s;
+}
+
+.delay10 {
+    animation-delay: 1s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes translatein {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes rotation_check {
+    from {
+        transform: rotate(-270deg);
+    }
+    to {
+        transform: rotate(0deg);
     }
 }
