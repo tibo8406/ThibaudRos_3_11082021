@@ -135,6 +135,16 @@
         justify-content: space-between;
         &:hover {
             cursor: pointer;
+            .item__title {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .item__description {
+                overflow: hidden;
+            }
+            .item__price {
+                margin-right: 1.5rem;
+            }
             .item__selection {
                 animation: translatein 0.5s;
                 animation-fill-mode: both;
@@ -158,6 +168,7 @@
 
 .item {
     width: 70%;
+    max-width: 80%;
     &__title {
         margin: 0;
         font-size: 1.1rem;
@@ -167,16 +178,16 @@
         margin: 0.25rem 0 0 0;
         font-family: 'Roboto-light';
         font-weight: bolder;
-        overflow: hidden;
         white-space: nowrap;
-        text-overflow: ellipsis
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &__price {
         display: flex;
         align-items: flex-end;
         font-weight: bolder;
         transform: translateX(150%);
-        padding-right: 1rem;
+        margin-right: 0rem;
     }
     &__selection {
         background-color: $color-tertiary;
@@ -199,43 +210,43 @@
 }
 
 .delay1 {
-    animation-delay: 0.1s;
-}
-
-.delay2 {
     animation-delay: 0.2s;
 }
 
-.delay3 {
-    animation-delay: 0.3s;
-}
-
-.delay4 {
+.delay2 {
     animation-delay: 0.4s;
 }
 
-.delay5 {
-    animation-delay: 0.5s;
-}
-
-.delay6 {
+.delay3 {
     animation-delay: 0.6s;
 }
 
-.delay7 {
-    animation-delay: 0.7s;
-}
-
-.delay8 {
+.delay4 {
     animation-delay: 0.8s;
 }
 
+.delay5 {
+    animation-delay: 1s;
+}
+
+.delay6 {
+    animation-delay: 1.2s;
+}
+
+.delay7 {
+    animation-delay: 1.4s;
+}
+
+.delay8 {
+    animation-delay: 1.6s;
+}
+
 .delay9 {
-    animation-delay: 0.9s;
+    animation-delay: 1.8s;
 }
 
 .delay10 {
-    animation-delay: 1s;
+    animation-delay: 2s;
 }
 
 @keyframes fadein {
