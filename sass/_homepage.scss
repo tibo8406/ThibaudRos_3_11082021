@@ -36,24 +36,14 @@ header {
     left: 0;
     top: 0;
     z-index: 15;
-    animation: loading 2.5s;
+    animation: loading 2s cubic-bezier(0.55, 0.06, 0.71, 0.19);
     background-color: hsla(0, 0%, 50%, 70%);
     animation-fill-mode: both;
-    animation-delay: 0.5s;
-    @keyframes loading {
-        0% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-            z-index: -1;
-        }
-    }
     &__container {
         display: flex;
         width: 7rem;
         justify-content: space-between;
-        animation: moving 0.5s backwards infinite ease-in-out alternate;
+        animation: moving 0.325s backwards infinite ease-in-out alternate;
         animation-play-state: running;
     }
     &__bar {
@@ -71,14 +61,6 @@ header {
             height: 4rem;
             width: 1rem;
             background-color: $color-tertiary;
-        }
-        @keyframes moving {
-            0% {
-                transform: scaleY(0.5);
-            }
-            100% {
-                transform: scaleY(1.0);
-            }
         }
     }
 }
@@ -257,14 +239,6 @@ header {
         &--empty {
             position: relative;
             display: flex;
-        }
-        @keyframes disappear {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
         &:hover {
             .carte__fav--full {

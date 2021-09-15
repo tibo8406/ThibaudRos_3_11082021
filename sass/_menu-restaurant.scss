@@ -58,14 +58,6 @@
             position: relative;
             display: flex;
         }
-        @keyframes disappear {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
         &:hover {
             cursor: pointer;
             .menu__fav--full {
@@ -249,32 +241,4 @@
 
 .delay10 {
     animation-delay: 2s;
-}
-
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
-/*@keyframes translatein {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0%);
-    }
-}*/
-
-@keyframes rotation_check {
-    from {
-        transform: rotate(-270deg);
-    }
-    to {
-        transform: rotate(0deg);
-    }
 }

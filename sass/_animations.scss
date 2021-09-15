@@ -1,0 +1,45 @@
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes moving {
+    0% {
+        transform: scaleY(0.5);
+    }
+    100% {
+        transform: scaleY(1.0);
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rotation_check {
+    from {
+        transform: rotate(-270deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
